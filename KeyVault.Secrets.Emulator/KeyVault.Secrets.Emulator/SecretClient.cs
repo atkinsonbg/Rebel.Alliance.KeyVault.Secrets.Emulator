@@ -18,6 +18,11 @@
             {
                 _logger = logger;
             }
+            
+            public SecretClient(Uri uri, dynamic credential, dynamic options = null)
+            {
+               _logger = new LoggerFactory().CreateLogger<SecretClient>();
+            }
 
             public async Task<KeyVaultSecret> GetSecretAsync(string name)
             {
@@ -119,5 +124,4 @@
             }
         }
     }
-
 }
